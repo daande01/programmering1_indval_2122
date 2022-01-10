@@ -24,7 +24,7 @@ public class Ovn72 {
 			int hurMycketKanFyllas=tankvolym-bränslekvar;
 			double kostnad=hurMycketKanFyllas*prisPerLiter;
 
-			JOptionPane.showMessageDialog(null, "du bör tank, du kan tanka"+hurMycketKanFyllas+"liter ,det kommer kosta "+kostnad);
+			JOptionPane.showMessageDialog(null, "du bör tanka, du kan tanka"+hurMycketKanFyllas+"liter ,det kommer kosta "+kostnad);
 
 		}
 
