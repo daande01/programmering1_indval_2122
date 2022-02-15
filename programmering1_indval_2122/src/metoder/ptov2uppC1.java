@@ -8,10 +8,12 @@ public class ptov2uppC1 {
 
 		System.out.println(idag);
 
+		//plockar ut månad från dagens datum
 		String månad = idag.substring(5, 7);
 		System.out.println(månad);
 		int månadInt = Integer.parseInt(månad);
 
+		//plockar ut dag från dagens datum
 		String dag = idag.substring(5, 7);
 		System.out.println(dag);
 		int dagInt = Integer.parseInt(dag);
@@ -30,14 +32,15 @@ public class ptov2uppC1 {
 		System.out.println(månadPersonInt);
 
 		String text = "månader kvar"+(månadPersonInt-månadInt)+"dagar kvar"+(dagPersonInt-dagInt);
-		System.out.println(text);
-		return "";
+
+		return text;
 
 	}
 
 	public static void main(String[] args) {
 
-		kvarTillFödelsedag("820412");
+		String text=kvarTillFödelsedag("820412");
 
+		System.out.println(text);
 	}
 }
