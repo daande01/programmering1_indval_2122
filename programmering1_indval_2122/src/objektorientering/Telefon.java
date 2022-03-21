@@ -7,6 +7,7 @@ public class Telefon {
 	private int knappar;
 	private int ljudvolym;
 
+	//konstruktor som inte tar någon inparameter.
 	public Telefon() {
 
 		skärm=true;
