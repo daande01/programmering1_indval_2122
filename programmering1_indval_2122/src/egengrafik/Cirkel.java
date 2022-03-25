@@ -10,25 +10,28 @@ import javax.swing.JFrame;
 import javax.swing.Timer;
 
 public class Cirkel extends JComponent {
-	int y = 100;
-	int x = 100;
+
+	private int y = 100; // instansvariabel
+	private int x = 100; // instansvariabel
+	private int xv=1;
+	private int yv=1;
 
 	Timer t;
 
-	public Cirkel () {
+// konstruktor
+	public Cirkel() {
 
+		setPreferredSize(new Dimension(400,400));
+		t = new Timer(20, e -> {
 
-	t=new Timer(3000, e->{
+			update();
+			System.out.println("funkar");
 
-		update();
-		System.out.println("funkar");
+		});
 
-	});
-
-	t.start();
+		t.start();
 
 	}
-
 
 	@Override
 	protected void paintComponent(Graphics g) {
@@ -41,7 +44,15 @@ public class Cirkel extends JComponent {
 
 	public void update() {
 
-		y=y+1;
+		y=y+yv;
+		x=x+xv;
+
+		if((y+50)>=400) {
+
+			yv=yv*-1;
+		}
+
+
 		repaint();
 	}
 
@@ -54,11 +65,8 @@ public class Cirkel extends JComponent {
 
 		Cirkel c = new Cirkel();
 		f.setContentPane(c);
-
-
-
-
-
+		f.pack();
+		f.setDefaultCloseOperation(f.EXIT_ON_CLOSE);
 
 	}
 
