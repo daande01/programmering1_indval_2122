@@ -17,6 +17,7 @@ public class Cirkel extends JComponent {
 
 	public Cirkel () {
 
+
 	t=new Timer(3000, e->{
 
 		update();
@@ -40,7 +41,7 @@ public class Cirkel extends JComponent {
 
 	public void update() {
 
-		y=200;
+		y=y+1;
 		repaint();
 	}
 
@@ -53,6 +54,8 @@ public class Cirkel extends JComponent {
 
 		Cirkel c = new Cirkel();
 		f.setContentPane(c);
+
+
 
 
 
