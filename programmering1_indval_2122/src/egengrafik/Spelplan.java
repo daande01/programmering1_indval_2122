@@ -7,31 +7,44 @@ import java.awt.Graphics;
 
 import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.Timer;
 
 public class Spelplan extends JComponent {
 
-	Boll []  b=new Boll[20];
+	Boll []  b=new Boll[1000];
 
 
 	public Spelplan() {
 
 		setPreferredSize(new Dimension(800,800));
 
-		for(int i = 0; i<20;i++) {
+		for(int i = 0; i<1000;i++) {
 
-		b[i]=new Boll((int)(Math.random()*800),
+			int x=(int)(Math.random()*800);
+					int xv;
+			if((x%10)==0) {
+
+				xv=(int)(Math.random()*9)*-1;
+
+			}else {
+				xv=(int)(Math.random()*9);
+			}
+
+
+
+		b[i]=new Boll(x,
 				(int)(Math.random()*800),
 				new Color((int)(Math.random()*255),
 						  (int)(Math.random()*255),
 						  (int)(Math.random()*255) ),
 				(int)(Math.random()*50),
-				(int)(Math.random()*9),
+				xv,
 				(int)(Math.random()*9));
 
 		}
 
 
-		/// skapa timer
+		Timer t= new Timer(50, e->{
 
 
 		for (Boll boll : b) {
@@ -39,14 +52,19 @@ public class Spelplan extends JComponent {
 			boll.update();
 
 		}
-
-
+		repaint();
+		});
+		t.start();
 	}
 
 	@Override
 	protected void paintComponent(Graphics g) {
 
 		super.paintComponent(g);
+
+		for (Boll boll : b) {
+			boll.rita(g);
+		}
 	}
 
 	public static void main(String[] args) {
