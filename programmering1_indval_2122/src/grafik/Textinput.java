@@ -14,7 +14,7 @@ public class Textinput extends JFrame {
 	JTextField t1= new JTextField(30);
 	JTextField t2= new JTextField(30);
 	JButton b1= new JButton("click");
-	JLabel l1 = new JLabel("hund");
+	JLabel l1 = new JLabel("summa=0");
 
 	public Textinput() {
 
@@ -35,7 +35,7 @@ public class Textinput extends JFrame {
 
 				int summa = tal1+tal2;
 
-				l1.setText(" "+summa);
+				l1.setText(" summa="+summa);
 
 		});
 
