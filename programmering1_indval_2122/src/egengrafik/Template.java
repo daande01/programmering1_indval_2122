@@ -8,18 +8,18 @@ import java.awt.Graphics;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 
-public class Template extends JComponent {
+public class Template extends JComponent { // ärver jcomponent
 
 
-	public Template() {
+	public Template() { // konstruktor
 
-		setPreferredSize(new Dimension(400,400) );
+		setPreferredSize(new Dimension(400,400) ); // sätter storlek på jcomponent
 	}
 
 	@Override
-	protected void paintComponent(Graphics g) {
+	protected void paintComponent(Graphics g) { // metod för att rita
 
-		super.paintComponent(g);
+		super.paintComponent(g);// ritar om förälder
 
 		//g.setColor(new Color(240,45,67));
 		g.setColor(Color.green);
@@ -32,12 +32,12 @@ public class Template extends JComponent {
 
 	public static void main(String[] args) {
 
-		JFrame f=new JFrame();
-		f.setVisible(true);
-		f.setLayout(new FlowLayout());
-		Template t=new Template();
-		f.add(t);
-		f.pack();
+		JFrame f=new JFrame(); //main  har en jframe
+		f.setVisible(true); // synlighet
+		f.setLayout(new FlowLayout());// placering av komponenter
+		Template t=new Template(); // skapar objekt av klassen
+		f.add(t); // lägger till jcomponent till jframe
+		f.pack(); // sätter storlek på jframe utifrån storleken på jcomponenten
 		f.setDefaultCloseOperation(f.EXIT_ON_CLOSE);
 
 	}
