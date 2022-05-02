@@ -27,7 +27,7 @@ public class Trafikljus extends JComponent {
 			}
 			System.out.println(counter);
 
-
+			repaint();
 		});
 		t.start();
 
