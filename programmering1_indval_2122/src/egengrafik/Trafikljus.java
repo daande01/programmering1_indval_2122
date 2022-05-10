@@ -40,18 +40,45 @@ public class Trafikljus extends JComponent {
 		super.paintComponent(g);
 		g.fillRect(150, 150, 50, 150);
 
-		g.setColor(new Color(0,150,0));
-		g.fillOval(155, 155, 40, 40);
+		if(counter ==0) {   /// gröntljus
+			g.setColor(Color.GREEN);
+			g.fillOval(155, 155, 40, 40);
 
-		//g.setColor(Color.GREEN);
-		//g.fillOval(155, 155, 40, 40);
+			g.setColor(new Color(204,102,0));
+			g.fillOval(155, 200, 40, 40);
+			g.setColor(new Color(150,0,0));
+			g.fillOval(155, 245, 40, 40);
+
+		}
+		if(counter ==1) {
+
+			g.setColor(new Color(0,150,0));
+			g.fillOval(155, 155, 40, 40);
+
+			g.setColor(Color.ORANGE);
+			g.fillOval(155, 200, 40, 40);
+			g.setColor(new Color(150,0,0));
+			g.fillOval(155, 245, 40, 40);
+
+		}
+		if(counter ==2) {
+			g.setColor(new Color(0,150,0));
+			g.fillOval(155, 155, 40, 40);
+			g.setColor(new Color(204,102,0));
+			g.fillOval(155, 200, 40, 40);
+			g.setColor(Color.red);
+			g.fillOval(155, 245, 40, 40);
+		}
 
 
-		g.setColor(Color.orange);
-		g.fillOval(155, 200, 40, 40);
 
-		g.setColor(Color.red);
-		g.fillOval(155, 245, 40, 40);
+
+
+
+
+
+
+
 	}
 
 
